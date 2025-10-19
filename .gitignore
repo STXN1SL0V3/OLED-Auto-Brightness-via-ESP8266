@@ -48,18 +48,6 @@ desktop.ini
 *.manifest
 *.spec.bak
 
-# Internal documentation and scripts (не для GitHub)
-GITHUB_RELEASE_GUIDE.md
-GIT_WORKFLOW.md
-HOW_TO_UPLOAD.md
-QUICK_UPLOAD_TO_GITHUB.bat
-QUICK_UPLOAD_TO_GITHUB.ps1
-UPDATE_GITHUB.bat
-UPDATE_GITHUB.ps1
-README_UPDATE_SUMMARY.txt
-SUCCESS_GITHUB_UPLOAD.txt
-READY_FOR_RELEASE.md
-PROJECT_DESCRIPTION.md
+# Скрипт для обновления репозитория (локально)
 _update.ps1
-_*.ps1
-_*.bat
+
