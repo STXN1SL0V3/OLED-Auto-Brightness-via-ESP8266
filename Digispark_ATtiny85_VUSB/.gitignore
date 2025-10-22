@@ -1,0 +1,23 @@
+# Digispark ATtiny85 .gitignore
+
+# V-USB library (GPL licensed, download separately)
+v-usb/
+
+# Micronucleus bootloader tools
+micronucleus/
+
+# Build artifacts
+build/
+*.hex
+*.elf
+*.o
+*.d
+*.lst
+*.map
+*.eep
+*.lss
+*.sym
+
+# OS files
+.DS_Store
+Thumbs.db
