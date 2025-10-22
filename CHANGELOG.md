@@ -1,8 +1,8 @@
-# 📝 Changelog# 📝 Changelog# 📝 Changelog# 📝 Changelog# 📝 Changelog
+# 📝 Changelog# 📝 Changelog# 📝 Changelog# 📝 Changelog# 📝 Changelog# 📝 Changelog
 
 
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project are documented in this file.
 
 
 
@@ -18,175 +18,364 @@ All notable changes to this project will be documented in this file.
 
 - **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
 
-- **Config structure changed:** New sections added, `[Smoothing]` section removed.
+- **Config.ini structure changed:** New sections added, `[Smoothing]` section removed
 
-- **New dependencies:** `keyboard`, `mouse`, `pystray`, `pyusb` are now required.
+- **New dependencies:** keyboard, mouse, pystray, pyusb
 
-- **Autostart path changed:** Registry entry requires an update when upgrading from a previous version.## [v2.0.0] - 2025-10-22
+- **Autostart path changed:** Registry entry requires update when upgrading## [v2.0.0] - 2025-10-22
 
-- **Digispark calibration storage:** Calibration data is now stored in `config.ini` instead of the device's memory.
+- **Digispark calibration storage:** Now in config.ini instead of device memory
 
 
 
 ### 🌍 Localization
 
-- **Full bilingual support:** The interface is now fully translated into Russian and English.### ⚠️ BREAKING CHANGES---All notable changes to this project will be documented in this file.Все значительные изменения в проекте документируются в этом файле.
+- **Full bilingual support:** Russian and English### ⚠️ BREAKING CHANGES---All notable changes to this project will be documented in this file.
 
-  - Over 60 strings have been localized.
+  - All interface elements translated (60+ strings)
 
-  - A language switcher button has been added to the main window.- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
-
-  - The selected language is saved in `config.ini`.
-
-  - All text updates dynamically when the language is switched.- **Config structure changed:** New sections added, `[Smoothing]` section removed
-
-  - The localization system is handled by a separate `localization.py` module.
-
-- **New dependencies:** keyboard, mouse, pystray, pyusb
-
-### 🎨 New Theme
-
-- **Dark color scheme:** A modern, minimalist dark theme has been implemented.- **Autostart path changed:** Registry entry requires update when upgrading## [v2.0.0] - 2025-10-22
-
-  - Features a cyan accent color (`#4ec9b0`).
-
-  - Uses the Consolas monospace font for clarity.- **Digispark calibration storage:** Now in config.ini instead of device memory
-
-  - Consistent design across all windows and dialogs.
-
-  - Background: `#1e1e1e`, Text: `#d4d4d4`.
-
-
-
-### 🔌 Digispark ATtiny85 Support### 🌍 Localization
-
-- **New USB sensor mode:** Added support for the Digispark ATtiny85 as a USB light sensor.
-
-  - Utilizes the V-USB library for software-based USB communication.- **Full bilingual support:** Russian and English### ⚠️ BREAKING CHANGES------
-
-  - Automatic detection of the connected device.
-
-  - A setting to switch between ESP8266 and Digispark has been added.  - All interface elements translated (60+ strings)
-
-  - Implemented USB device caching to prevent freezes during device search.
-
-  - VID: `0x16c0`, PID: `0x05df`.  - Language switcher button in main window- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
-
-  - Full documentation is available in `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` (RU/EN).
+  - Language switcher button in main window- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
 
   - Setting saved in config.ini
 
-### ⚡ New Features
+  - Dynamic text updates when language changes- **Config structure changed:** New sections added, `[Smoothing]` section removed.
 
-- **System tray integration:**  - Dynamic text update when switching languages- **Config structure changed:** New sections added, `[Smoothing]` section removed
+  - Localization system in separate `localization.py` module
 
-  - The application now minimizes to the system tray on focus loss.
+- **New dependencies:** `keyboard`, `mouse`, `pystray`, `pyusb` are now required.
 
-  - A global hotkey `Ctrl+Shift+B` has been added to show/hide the main window.  - Localization system in separate `localization.py` module
+### 🎨 New Theme
 
-  - The tray icon includes a context menu with Show, Settings, Restart, and Exit options.
+- Dark color scheme interface- **Autostart path changed:** Registry entry requires an update when upgrading from a previous version.## [v2.0.0] - 2025-10-22
 
-- **Manual brightness control:**- **New dependencies:** keyboard, mouse, pystray, pyusb
+  - Modern minimalist design
 
-  - A slider for manual brightness adjustment (1-100%) has been added.
+  - Cyan accent color (#4ec9b0)- **Digispark calibration storage:** Calibration data is now stored in `config.ini` instead of the device's memory.
 
-  - Global mouse wheel control over the tray icon allows for brightness changes from anywhere.### 🎨 New Theme
+  - Consolas monospace font
 
-  - A toggle to switch between manual and automatic modes is now available.
+  - Consistent design across all windows and dialogs
 
-- **Configurable averaging period:**- Dark color scheme interface- **Autostart path changed:** Registry entry requires update when upgrading## [v2.0.0] - 2025-10-22## [v2.0.0] - 2025-10-22
+  - Background #1e1e1e, text #d4d4d4
 
-  - The sensor reading averaging period is now configurable from 1 to 120 seconds (default: 10s).
+### 🌍 Localization
 
-  - This can be adjusted via the Settings UI and is saved in `config.ini`.  - Modern minimalist design
+### 🔌 Digispark ATtiny85 Support
 
+- **New USB sensor mode**- **Full bilingual support:** The interface is now fully translated into Russian and English.### ⚠️ BREAKING CHANGES---All notable changes to this project will be documented in this file.Все значительные изменения в проекте документируются в этом файле.
 
+  - Support for Digispark ATtiny85 via V-USB
 
-### 🔧 Technical Improvements  - Cyan accent color (#4ec9b0)- **Digispark calibration storage:** Now in config.ini instead of device memory
-
-- **Fixed application freezes:**
-
-  - Optimized USB device search with caching.  - Consolas monospace font
-
-  - Removed blocking calls when switching modes for a smoother UI.
-
-- **Main file renamed:**  - Consistent design across all windows and dialogs
-
-  - `simple_auto_brightness.py` is now `OLED_Auto_Brightness.py`.
-
-  - All references in documentation and scripts have been updated.  - Background #1e1e1e, text #d4d4d4
-
-- **Fixed compilation issues:**
-
-  - Resolved an issue where settings were not saved correctly in the compiled `.exe`.### 🌍 Localization
-
-  - The `get_config_path()` function now ensures correct paths in both script and compiled modes.
-
-- **Improved PyInstaller compilation:**### 🔌 Digispark ATtiny85 Support
-
-  - Added hidden imports for PIL/Pillow to prevent errors.
-
-  - Fixed issues related to TCL/TK library packaging.- **New USB sensor mode**- **Full bilingual support:** Russian and English### ⚠️ BREAKING CHANGES### ⚠️ BREAKING CHANGES (Несовместимые изменения)
-
-
-
-### 📦 New Files  - Digispark ATtiny85 support via V-USB
-
-- `localization.py`: A new module for handling translations.
-
-- `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md`: Flashing instructions for the ATtiny85.  - Automatic connected device detection  - All interface elements translated (60+ strings)
-
-- Updated `build.spec` for correct compilation.
+  - Automatic detection of connected device  - Over 60 strings have been localized.
 
   - Switch between ESP8266 and Digispark in settings
 
-### 🐛 Bug Fixes
+  - USB device caching (fixed search freezes)  - A language switcher button has been added to the main window.- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
 
-- Fixed window title centering.  - USB device caching (fixed search freezes)  - Language switcher button in main window- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`- **Переименован главный файл:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
+  - VID: 0x16c0, PID: 0x05df
 
-- Corrected the logic of the language button (RU/EN).
-
-- Eliminated `_imaging` import issues in the compiled `.exe`.  - VID: 0x16c0, PID: 0x05df
-
-- Resolved the `Can't find a usable init.tcl` error when running the `.exe`.
-
-- Fixed an issue where settings were lost after an application restart.  - Full documentation in `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` (RU/EN)  - Setting saved in config.ini
-
-- Eliminated freezes that occurred when searching for USB devices.
+  - Full documentation in `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` (RU/EN)  - The selected language is saved in `config.ini`.
 
 
 
-### 📚 Documentation
+### ⚡ New Features  - All text updates dynamically when the language is switched.- **Config structure changed:** New sections added, `[Smoothing]` section removed
 
-- Added a complete guide for the Digispark ATtiny85.### ⚡ New Features  - Dynamic text update when switching languages- **Config structure changed:** New sections added, `[Smoothing]` section removed- **Изменена структура config.ini:** Добавлены новые секции, удалена секция `[Smoothing]`
+- **System tray integration**
 
-- Created English versions of all documentation.
+  - Minimize on focus loss  - The localization system is handled by a separate `localization.py` module.
 
-- Updated `README.md` and all related instructions.- **System tray integration**
+  - Global hotkey `Ctrl+Shift+B` to show/hide window
 
-
-
-### 🔄 Updated Files  - Minimize on focus loss  - Localization system in separate `localization.py` module
-
-- All batch and VBS scripts have been updated to use the new main filename.
-
-- Synchronized files in the `Git_Export` directory.  - `Ctrl+Shift+B` hotkey to show window
-
-- Added new requirements: `keyboard>=0.13.5`, `mouse>=0.7.1`.
-
-  - Tray context menu (Show/Settings/Restart/Exit)- **New dependencies:** keyboard, mouse, pystray, pyusb- **Новые зависимости:** keyboard, mouse, pystray, pyusb
-
----
+  - Tray context menu (Show/Settings/Restart/Exit)- **New dependencies:** keyboard, mouse, pystray, pyusb
 
   
 
-## [v1.0.1] - 2025-10-19
-
 - **Manual brightness control**### 🎨 New Theme
 
-### ✨ Added
+  - Slider for manual adjustment (1-100%)
 
-- **Windows Autostart:** A checkbox in the UI now allows for quick setup of autostart.  - Slider for manual adjustment (1-100%)
+  - Global mouse wheel scrolling (works anywhere on screen)- **Dark color scheme:** A modern, minimalist dark theme has been implemented.- **Autostart path changed:** Registry entry requires update when upgrading## [v2.0.0] - 2025-10-22
+
+  - Toggle between manual and automatic mode
+
+    - Features a cyan accent color (`#4ec9b0`).
+
+- **Configurable averaging period**
+
+  - Range: 1-120 seconds (default 10 sec)  - Uses the Consolas monospace font for clarity.- **Digispark calibration storage:** Now in config.ini instead of device memory
+
+  - Adjustable via Settings UI
+
+  - Saved in config.ini  - Consistent design across all windows and dialogs.
+
+
+
+### 🔧 Technical Improvements  - Background: `#1e1e1e`, Text: `#d4d4d4`.
+
+- **Fixed application freezes**
+
+  - Optimized USB device search (caching)
+
+  - Removed blocking when switching modes
+
+  - Smooth interface operation without freezes### 🔌 Digispark ATtiny85 Support### 🌍 Localization
+
+  
+
+- **Main file renamed:**- **New USB sensor mode:** Added support for the Digispark ATtiny85 as a USB light sensor.
+
+  - `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
+
+  - Updated all references in documentation and scripts  - Utilizes the V-USB library for software-based USB communication.- **Full bilingual support:** Russian and English### ⚠️ BREAKING CHANGES------
+
+  
+
+- **Fixed compilation issues:**  - Automatic detection of the connected device.
+
+  - Resolved settings save problem in .exe
+
+  - `get_config_path()` function for correct paths  - A setting to switch between ESP8266 and Digispark has been added.  - All interface elements translated (60+ strings)
+
+  - Support for both script and compiled modes
+
+    - Implemented USB device caching to prevent freezes during device search.
+
+- **Improved PyInstaller compilation:**
+
+  - Added hidden imports for PIL/Pillow  - VID: `0x16c0`, PID: `0x05df`.  - Language switcher button in main window- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
+
+  - Fixed TCL/TK library errors
+
+  - Automatic packaging of required dependencies  - Full documentation is available in `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` (RU/EN).
+
+
+
+### 📦 New Files  - Setting saved in config.ini
+
+- `localization.py` - localization module with translations
+
+- `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` - ATtiny85 flashing guide### ⚡ New Features
+
+- Updated `build.spec` for correct compilation
+
+- English documentation versions (README_EN.md, COMPILE_AND_FLASH_EN.md)- **System tray integration:**  - Dynamic text update when switching languages- **Config structure changed:** New sections added, `[Smoothing]` section removed
+
+
+
+### 🐛 Fixed Bugs  - The application now minimizes to the system tray on focus loss.
+
+- Fixed window title centering
+
+- Fixed language button logic (RU = Russian, EN = English)  - A global hotkey `Ctrl+Shift+B` has been added to show/hide the main window.  - Localization system in separate `localization.py` module
+
+- Eliminated `_imaging` import issue in compiled .exe
+
+- Eliminated `Can't find a usable init.tcl` error when running .exe  - The tray icon includes a context menu with Show, Settings, Restart, and Exit options.
+
+- Fixed settings loss after program restart
+
+- Eliminated freezes when searching for USB devices- **Manual brightness control:**- **New dependencies:** keyboard, mouse, pystray, pyusb
+
+
+
+### 📚 Documentation  - A slider for manual brightness adjustment (1-100%) has been added.
+
+- Added complete guide for Digispark ATtiny85
+
+  - Step-by-step firmware compilation instructions  - Global mouse wheel control over the tray icon allows for brightness changes from anywhere.### 🎨 New Theme
+
+  - Flashing guide via Arduino IDE
+
+  - Common troubleshooting solutions  - A toggle to switch between manual and automatic modes is now available.
+
+  - Device functionality testing
+
+- Created English version of all documentation- **Configurable averaging period:**- Dark color scheme interface- **Autostart path changed:** Registry entry requires update when upgrading## [v2.0.0] - 2025-10-22## [v2.0.0] - 2025-10-22
+
+- Updated README.md and all instructions
+
+  - The sensor reading averaging period is now configurable from 1 to 120 seconds (default: 10s).
+
+### 🔄 Updated Files
+
+- All batch and VBS scripts updated for new filename  - This can be adjusted via the Settings UI and is saved in `config.ini`.  - Modern minimalist design
+
+- Synchronized files in Git_Export
+
+- Added requirements: `keyboard>=0.13.5`, `mouse>=0.7.1`
+
+
+
+---### 🔧 Technical Improvements  - Cyan accent color (#4ec9b0)- **Digispark calibration storage:** Now in config.ini instead of device memory
+
+
+
+## [v1.0.1] - 2025-10-19- **Fixed application freezes:**
+
+
+
+### ✨ Added  - Optimized USB device search with caching.  - Consolas monospace font
+
+- **Windows Autostart** - checkbox in interface for quick setup
+
+  - Automatic add/remove Windows registry entry  - Removed blocking calls when switching modes for a smoother UI.
+
+  - Works for both compiled .exe and Python scripts
+
+  - Automatic Python interpreter detection in virtual environment- **Main file renamed:**  - Consistent design across all windows and dialogs
+
+
+
+### 🔧 Improved  - `simple_auto_brightness.py` is now `OLED_Auto_Brightness.py`.
+
+- Optimized interface element spacing
+
+  - Reduced padding while maintaining readability  - All references in documentation and scripts have been updated.  - Background #1e1e1e, text #d4d4d4
+
+  - All elements now visible without scrolling in 450x380 window
+
+  - Compact design without loss of functionality- **Fixed compilation issues:**
+
+
+
+### 📚 Documentation  - Resolved an issue where settings were not saved correctly in the compiled `.exe`.### 🌍 Localization
+
+- Updated README.md with autostart feature description
+
+- Added checkbox information in "Usage" section  - The `get_config_path()` function now ensures correct paths in both script and compiled modes.
+
+- Updated release notes for v1.0.1
+
+- Created CHANGELOG.md for tracking changes- **Improved PyInstaller compilation:**### 🔌 Digispark ATtiny85 Support
+
+
+
+---  - Added hidden imports for PIL/Pillow to prevent errors.
+
+
+
+## [v1.0.0] - 2025-10-18  - Fixed issues related to TCL/TK library packaging.- **New USB sensor mode**- **Full bilingual support:** Russian and English### ⚠️ BREAKING CHANGES### ⚠️ BREAKING CHANGES (Несовместимые изменения)
+
+
+
+### 🎉 First Stable Release
+
+
+
+#### ✨ Main Features### 📦 New Files  - Digispark ATtiny85 support via V-USB
+
+- Automatic brightness adjustment via overlay window
+
+- Smooth transitions between brightness levels (configurable)- `localization.py`: A new module for handling translations.
+
+- Sensor reading averaging (5-60+ seconds)
+
+- System tray with icon and context menu- `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md`: Flashing instructions for the ATtiny85.  - Automatic connected device detection  - All interface elements translated (60+ strings)
+
+- Configuration via config.ini without code editing
+
+- Click-through transparent overlay window- Updated `build.spec` for correct compilation.
+
+- Instant context menu dimming (50ms update)
+
+  - Switch between ESP8266 and Digispark in settings
+
+#### 📡 ESP8266 Firmware
+
+- WiFi connection with configurable static IP### 🐛 Bug Fixes
+
+- Web interface for sensor calibration
+
+- Calibration storage in EEPROM- Fixed window title centering.  - USB device caching (fixed search freezes)  - Language switcher button in main window- **Main file renamed:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`- **Переименован главный файл:** `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
+
+- HTTP REST API for data retrieval
+
+- Optimized code (HTML ~1800 bytes)- Corrected the logic of the language button (RU/EN).
+
+- 1 Hz sensor polling frequency
+
+- Eliminated `_imaging` import issues in the compiled `.exe`.  - VID: 0x16c0, PID: 0x05df
+
+#### 🛠️ Technical Implementation
+
+- Overlay based on win32 API (WS_EX_LAYERED | WS_EX_TRANSPARENT)- Resolved the `Can't find a usable init.tcl` error when running the `.exe`.
+
+- Smooth brightness changes with configurable step
+
+- Automatic reconnection on ESP8266 connection loss- Fixed an issue where settings were lost after an application restart.  - Full documentation in `Digispark_ATtiny85_VUSB/COMPILE_AND_FLASH.md` (RU/EN)  - Setting saved in config.ini
+
+- Calibration values saved in config.ini
+
+- Custom icon support (icon.ico)- Eliminated freezes that occurred when searching for USB devices.
+
+
+
+#### 📦 Additional
+
+- Launch scripts (.vbs for silent start, .bat with console)
+
+- PyInstaller configuration for .exe compilation### 📚 Documentation
+
+- Detailed documentation (README.md)
+
+- MIT License- Added a complete guide for the Digispark ATtiny85.### ⚡ New Features  - Dynamic text update when switching languages- **Config structure changed:** New sections added, `[Smoothing]` section removed- **Изменена структура config.ini:** Добавлены новые секции, удалена секция `[Smoothing]`
+
+- requirements.txt for easy dependency installation
+
+- Created English versions of all documentation.
+
+---
+
+- Updated `README.md` and all related instructions.- **System tray integration**
+
+## Versioning Format
+
+
+
+This project uses [Semantic Versioning](https://semver.org/):
+
+- **MAJOR** (X.0.0) - incompatible API changes### 🔄 Updated Files  - Minimize on focus loss  - Localization system in separate `localization.py` module
+
+- **MINOR** (0.X.0) - new functionality with backward compatibility
+
+- **PATCH** (0.0.X) - bug fixes and minor improvements- All batch and VBS scripts have been updated to use the new main filename.
+
+
+
+---- Synchronized files in the `Git_Export` directory.  - `Ctrl+Shift+B` hotkey to show window
+
+
+
+## Symbol Legend- Added new requirements: `keyboard>=0.13.5`, `mouse>=0.7.1`.
+
+
+
+- ✨ New features  - Tray context menu (Show/Settings/Restart/Exit)- **New dependencies:** keyboard, mouse, pystray, pyusb- **Новые зависимости:** keyboard, mouse, pystray, pyusb
+
+- 🔧 Improvements
+
+- 🐛 Bug fixes---
+
+- 📚 Documentation
+
+- 🔒 Security  
+
+- ⚡ Performance
+
+- 🎨 UI/UX changes## [v1.0.1] - 2025-10-19
+
+- ♻️ Refactoring
+
+- 🗑️ Removed- **Manual brightness control**### 🎨 New Theme
+
+
+
+---### ✨ Added
+
+
+
+**Full changelog:** [GitHub Releases](../../releases)- **Windows Autostart:** A checkbox in the UI now allows for quick setup of autostart.  - Slider for manual adjustment (1-100%)
+
 
   - Automatically adds/removes the necessary Windows registry entry.
 
