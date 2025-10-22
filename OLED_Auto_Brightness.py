@@ -33,6 +33,9 @@ import configparser
 import os
 import sys
 import subprocess
+import shutil
+import tempfile
+import atexit
 
 # Импорт локализации
 from localization import get_text, set_language, get_language, get_localization
@@ -45,6 +48,40 @@ def get_config_path():
     else:
         # Если запущена как скрипт - в папке скрипта
         return os.path.join(os.path.dirname(__file__), 'config.ini')
+
+def cleanup_pyinstaller_temp():
+    """Очистка старых временных папок PyInstaller"""
+    try:
+        if not getattr(sys, 'frozen', False):
+            return  # Работает только для скомпилированной программы
+        
+        temp_dir = tempfile.gettempdir()
+        current_mei = getattr(sys, '_MEIPASS', None)
+        
+        # Ищем старые _MEI папки
+        for item in os.listdir(temp_dir):
+            if item.startswith('_MEI') and os.path.isdir(os.path.join(temp_dir, item)):
+                mei_path = os.path.join(temp_dir, item)
+                
+                # Не удаляем текущую папку
+                if current_mei and os.path.samefile(mei_path, current_mei):
+                    continue
+                
+                # Пытаемся удалить старую папку
+                try:
+                    shutil.rmtree(mei_path, ignore_errors=True)
+                    print(f"🗑️ Удалена старая временная папка: {item}")
+                except Exception as e:
+                    # Если не удалось - не критично, просто игнорируем
+                    pass
+    except Exception as e:
+        print(f"⚠ Ошибка очистки временных файлов: {e}")
+
+# Очищаем старые временные файлы при запуске
+cleanup_pyinstaller_temp()
+
+# Регистрируем очистку при выходе
+atexit.register(cleanup_pyinstaller_temp)
 
 # Добавляем libusb в PATH (для PyUSB)
 if hasattr(sys, 'frozen'):
@@ -1887,14 +1924,26 @@ class SimpleBrightnessControl:
         except:
             pass
         
+        # Принудительная очистка временных файлов перед перезапуском
+        cleanup_pyinstaller_temp()
+        
+        # Небольшая задержка для завершения очистки
+        time.sleep(0.5)
+        
         # Запускаем новый процесс
         import subprocess
         python = sys.executable
         script = os.path.abspath(__file__)
         
-        # Запускаем новый экземпляр
+        # Запускаем новый экземпляр с задержкой через батник
         if sys.platform == 'win32':
-            subprocess.Popen([python, script], creationflags=subprocess.CREATE_NO_WINDOW)
+            if getattr(sys, 'frozen', False):
+                # Для скомпилированной программы - добавляем задержку через cmd
+                batch_command = f'timeout /t 1 /nobreak >nul & start "" "{python}"'
+                subprocess.Popen(batch_command, shell=True, creationflags=subprocess.CREATE_NO_WINDOW)
+            else:
+                # Для скрипта
+                subprocess.Popen([python, script], creationflags=subprocess.CREATE_NO_WINDOW)
         else:
             subprocess.Popen([python, script])
         
