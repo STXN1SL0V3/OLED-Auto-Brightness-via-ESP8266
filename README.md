@@ -23,7 +23,8 @@ The program creates a transparent overlay window on top of the screen that dims 
 
 ## 📜 License
 
-This project is licensed under the GNU General Public License v3.0. See the `LICENSE` file for details.
+This project is licensed under the **GPL-3.0**. See the `LICENSE` file for more details.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## 🛠️ Required Hardware
 
@@ -275,16 +276,7 @@ This is a major version with incompatible changes from v1.0.1:
 - 🐛 **Bug fixes:** USB device search freezes, config saving in exe
 - 📚 **Documentation:** comprehensive guides for ATtiny85 flashing (EN/RU)
 
-## 🤝 Author
+## 🤝 Contributing
 
-**STXN1SL0V3**
-
-## 📄 License
-
-MIT License - use freely at your own risk.
-
----
-
-### 🐛 Issues and Suggestions
-
-If you found a bug or have ideas - create an Issue on GitHub!
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/STXN1SL0V3/OLED-Auto-Brightness-via-ESP8266/issues).
