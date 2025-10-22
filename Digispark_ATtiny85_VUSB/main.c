@@ -1,13 +1,19 @@
 /*
- * Digispark ATtiny85 Photoresistor Firmware
- * Читает значение фоторезистора и передает через USB Control Transfer
- * 
- * БЕЗОПАСНАЯ схема подключения:
- * +5V --- [Фоторезистор] --- P2 (физический pin 7) --- [47kΩ] --- GND
- * 
- * P2 = физический pin 7 = PB2 = ADC1 - ЕДИНСТВЕННЫЙ безопасный ADC пин!
- * 
- * На основе: https://github.com/xythobuz/AutoBrightness
+ * Digispark ATtiny85 V-USB Firmware
+ * Copyright (C) 2025 STXN1SL0V3
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <avr/io.h>

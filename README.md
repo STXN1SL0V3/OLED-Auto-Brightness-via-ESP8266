@@ -21,6 +21,10 @@ The program creates a transparent overlay window on top of the screen that dims 
 - 🚀 Windows autostart
 - ⚙️ Configuration via config.ini
 
+## 📜 License
+
+This project is licensed under the GNU General Public License v3.0. See the `LICENSE` file for details.
+
 ## 🛠️ Required Hardware
 
 ### Option 1: ESP8266 (WiFi sensor)
