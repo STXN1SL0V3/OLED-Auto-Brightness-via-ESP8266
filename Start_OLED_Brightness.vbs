@@ -5,7 +5,7 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 currentPath = fso.GetParentFolderName(WScript.ScriptFullName)
 
 ' Путь к Python скрипту
-scriptPath = currentPath & "\simple_auto_brightness.py"
+scriptPath = currentPath & "\OLED_Auto_Brightness.py"
 
 ' Проверяем наличие виртуального окружения
 venvPath = currentPath & "\.venv\Scripts\pythonw.exe"
