@@ -262,7 +262,7 @@ pyinstaller --clean build.spec
 ### ⚠️ Breaking Changes
 This is a major version with incompatible changes from v1.0.1:
 - Main file renamed: `simple_auto_brightness.py` → `OLED_Auto_Brightness.py`
-- Config structure changed: new sections added, `[Smoothing]` removed
+- Config structure changed: new sections added
 - New dependencies required: keyboard, mouse, pystray, pyusb
 - Autostart registry path changed (requires manual update when upgrading)
 
